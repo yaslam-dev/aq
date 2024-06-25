@@ -10,6 +10,31 @@ The goal is not the create the most complete app, but to understand how you solv
 We suggest to not spent more than 2 hours, but you're free to spend more time. And don't worry if it takes you longer.
 Also it's fine to descope parts of the task, that's really up to you.
 
+# Decision and Design Consideration.
+
+I have created [Engineering Requirement Diagram](https://miro.com/app/board/uXjVK40ckDA=/?share_link_id=210532589395) in which I have listed possible solution and my decision to chose first solution
+
+## Solution 1
+
+Solution 1 is fairly simple, we are creating a Nextjs static website that inclemently builds itself after some time.
+
+## Solution 2
+
+In this Solution, I am populating redis,S3 whenever the server using Agenda Job or Bull. Then when user requests the information; I am using sidecar proxy pattern to check if the it is available in Redis then return it otherwise create a Job ID and ask for client to pool.
+
+# What is done
+
+1. Using CSS Modules, Next, Bash and ISG to create a static website with Vitest for unit tests.
+2. Using Custom bar chart.
+
+# Possible Improvement
+
+1. A Hybrid approach can build using Solution 1 and Solution 2; In Which we can keep the source of truth on the backend but using ServerSideProps or StaticProps to inject data at build time or at SSR.
+
+2. [Artillery load testing is missing](https://www.artillery.io/)
+
+3. API functions need to be Integrated Tested
+
 ### Get Started
 
 This repo will help you to kick-start your application. A backend has been setup for you, but for the frontend you're free to use anything you like. For Vue we suggest Vite, for React Create-React-App. It's also totally fine to use Next/Nuxt for the whole project and copy over the provided code. Whatever stack works for you!
@@ -88,31 +113,6 @@ Requirements:
 - do not use chart / css / component / animation / caching libraries. The idea is that you show your skills by coding this manually.
 - chart should be responsive, test by changing the window size (dragging)
 - calculate and show world total footprint on the page
-
-# Decision and Design Consideration.
-
-I have created [Engineering Requirement Diagram](https://miro.com/app/board/uXjVK40ckDA=/?share_link_id=210532589395) in which I have listed possible solution and my decision to chose first solution
-
-## Solution 1
-
-Solution 1 is fairly simple, we are creating a Nextjs static website that inclemently builds itself after some time.
-
-## Solution 2
-
-In this Solution, I am populating redis,S3 whenever the server using Agenda Job or Bull. Then when user requests the information; I am using sidecar proxy pattern to check if the it is available in Redis then return it otherwise create a Job ID and ask for client to pool.
-
-# What is done
-
-1. Using CSS Modules, Next, Bash and ISG to create a static website with Vitest for unit tests.
-2. Using Custom bar chart.
-
-# Possible Improvement
-
-1. A Hybrid approach can build using Solution 1 and Solution 2; In Which we can keep the source of truth on the backend but using ServerSideProps or StaticProps to inject data at build time or at SSR.
-
-2. [Artillery load testing is missing](https://www.artillery.io/)
-
-3. API functions need to be Integrated Tested
 
 # Deliver your result
 
