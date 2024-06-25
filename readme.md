@@ -104,7 +104,7 @@ In this Solution, I am populating redis,S3 whenever the server using Agenda Job 
 # What is done
 
 1. Using CSS Modules, Next, Bash and ISG to create a static website with Vitest for unit tests.
-2. Utility
+2. Using Custom bar chart.
 
 # Possible Improvement
 
