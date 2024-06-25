@@ -1,0 +1,34 @@
+/* BarChart.module.css */
+.barGroup {
+  transition: opacity 0.3s;
+}
+
+.container:hover .barGroup {
+  opacity: 0.3;
+}
+
+.container .barGroup:hover {
+  opacity: 1;
+}
+
+.container .barGroup:hover .nameLabel {
+  font-weight: 400;
+}
+
+.container .barGroup:hover .valueLabel {
+  font-size: 0.8em;
+}
+
+.nameLabel {
+  text-anchor: end;
+  font-weight: 300;
+  font-size: 1em;
+  fill: #333;
+}
+
+.valueLabel {
+  text-anchor: end;
+  fill: #fff;
+  font-weight: 900;
+  font-size: 0.7em;
+}

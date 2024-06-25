@@ -1,0 +1,19 @@
+.header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 58px;
+  margin-top: 89px;
+  margin-bottom: 89px;
+}
+
+.heading {
+  color: #333;
+  width: 735px;
+  font-family: "Inter", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58.09px;
+  text-align: center;
+}

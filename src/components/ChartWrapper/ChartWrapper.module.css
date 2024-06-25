@@ -1,0 +1,50 @@
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dataGroup {
+  width: 458px;
+  height: 106px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  margin-bottom: 80px;
+}
+
+.dataItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  color: #666;
+  margin-bottom: 8px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29.05px;
+  text-align: center;
+}
+
+.value {
+  font-weight: bold;
+  color: #008080;
+  font-family: Inter;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 67.77px;
+  text-align: center;
+}
+
+.barChartContainer {
+  width: 1000px;
+  height: 400px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px 8px 8px 8px;
+  border-width: 1px 1px 1px 1px;
+}
