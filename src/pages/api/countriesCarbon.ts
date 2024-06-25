@@ -26,7 +26,7 @@ export default async function handler(
         try {
             const fileData = await fs.readFile(filePath, "utf-8");
             const jsonData = JSON.parse(fileData);
-            res.setHeader("Cache-Control", "s-maxage=1440000");
+            res.setHeader("Cache-Control", "s-maxage=43200");
             return res.status(200).json({ result: jsonData });
         } catch (err) {
             // Fetch data from the API
@@ -36,7 +36,7 @@ export default async function handler(
             await fs.mkdir(path.dirname(filePath), { recursive: true });
             await fs.writeFile(filePath, JSON.stringify(result, null, 2), "utf-8");
 
-            res.setHeader("Cache-Control", "s-maxage=1440000");
+            res.setHeader("Cache-Control", "s-maxage=43200");
             res.status(200).json({ result });
         }
     } catch (err) {

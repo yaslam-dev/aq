@@ -56,9 +56,7 @@ export const getStaticProps = (async () => {
       batchedAllCountriesCarbonData,
     },
     // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 20 seconds
-    revalidate: 1000, // In seconds
+    revalidate: 43200, // 12 hours to seconds
   };
 }) satisfies GetStaticProps<Props>;
 

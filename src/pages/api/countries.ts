@@ -16,7 +16,7 @@ async function getCountryData() {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
         const result = await getCountryData()
-        res.setHeader('Cache-Control', 's-maxage=1440000');
+        res.setHeader('Cache-Control', 's-maxage=43200');
         res.status(200).json({ result })
     } catch (err) {
         res.status(500).json({ error: 'failed to load data' })
