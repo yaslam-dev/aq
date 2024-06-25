@@ -4,7 +4,7 @@ import axios from "axios";
 import pThrottle from "p-throttle";
 
 const throttle = pThrottle({
-  limit: 1,
+  limit: 3,
   interval: 1000,
   strict: true,
   onDelay: () => {
@@ -31,7 +31,7 @@ export default {
         throttle(() => {
           console.log(`Fetching Data for Country with code ${country.countryCode}`);
           return this.get(
-            `https://api.footprintnetwork.org/v1/data/${country.countryCode}/all`
+            `https://api.footprintnetwork.org/v1/data/${country.countryCode}/all/EFCpc`
           );
         })
       );

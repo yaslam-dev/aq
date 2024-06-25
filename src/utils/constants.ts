@@ -1,0 +1,1 @@
+export const TWELVE_HOURS_TO_SECONDS = 43200

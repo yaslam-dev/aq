@@ -4,7 +4,7 @@ const nextConfig = {
   optimizeFonts: true,
   poweredByHeader: false,
   reactProductionProfiling: false,
-  staticPageGenerationTimeout: 1000,
+  staticPageGenerationTimeout: 100_000,
   compiler: {
     removeConsole: false,
   },

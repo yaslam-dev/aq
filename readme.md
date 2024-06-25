@@ -12,7 +12,7 @@ Also it's fine to descope parts of the task, that's really up to you.
 
 # Decision and Design Consideration.
 
-I have created [Engineering Requirement Diagram](https://miro.com/app/board/uXjVK40ckDA=/?share_link_id=210532589395) in which I have listed possible solution and my decision to chose first solution
+I have created [Engineering Requirement Diagram](https://miro.com/app/board/uXjVK40ckDA=/?share_link_id=479620894908) in which I have listed possible solution and my decision to chose first solution
 
 ## Solution 1
 

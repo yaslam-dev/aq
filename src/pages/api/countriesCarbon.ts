@@ -4,6 +4,7 @@ import { Country } from "@/types";
 import footprintApi from "@/utils/footprintApi";
 import path from "path";
 import { promises as fs } from "fs";
+import { TWELVE_HOURS_TO_SECONDS } from "@/utils/constants";
 
 export const config = {
     api: {
@@ -12,7 +13,7 @@ export const config = {
             sizeLimit: "10mb",
         },
     },
-    maxDuration: 1000,
+    maxDuration: 100_000,
 };
 
 export default async function handler(
@@ -26,7 +27,7 @@ export default async function handler(
         try {
             const fileData = await fs.readFile(filePath, "utf-8");
             const jsonData = JSON.parse(fileData);
-            res.setHeader("Cache-Control", "s-maxage=43200");
+            res.setHeader('Cache-Control', `s-maxage=${TWELVE_HOURS_TO_SECONDS}`);
             return res.status(200).json({ result: jsonData });
         } catch (err) {
             // Fetch data from the API
@@ -36,7 +37,7 @@ export default async function handler(
             await fs.mkdir(path.dirname(filePath), { recursive: true });
             await fs.writeFile(filePath, JSON.stringify(result, null, 2), "utf-8");
 
-            res.setHeader("Cache-Control", "s-maxage=43200");
+            res.setHeader('Cache-Control', `s-maxage=${TWELVE_HOURS_TO_SECONDS}`);
             res.status(200).json({ result });
         }
     } catch (err) {

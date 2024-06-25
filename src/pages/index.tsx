@@ -5,6 +5,7 @@ import ChartWrapper from "@/components/ChartWrapper/ChartWrapper";
 import { GetStaticProps } from "next";
 import { Country, KeyedEmissions } from "@/types";
 import useCountries from "@/hooks/useCountries";
+import { TWELVE_HOURS_TO_SECONDS } from "@/utils/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,8 +56,8 @@ export const getStaticProps = (async () => {
       years: yearsMappedToSingleArray,
       batchedAllCountriesCarbonData,
     },
-    // Next.js will attempt to re-generate the page:
-    revalidate: 43200, // 12 hours to seconds
+    // Next.js will attempt to re-generate the page once every 12 hours
+    revalidate: TWELVE_HOURS_TO_SECONDS,
   };
 }) satisfies GetStaticProps<Props>;
 
